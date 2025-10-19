@@ -3,6 +3,7 @@ import { TodoList } from '@/components/todos/TodoList';
 import { MusicPlayer } from '@/components/music/MusicPlayer';
 import { Card } from '@/components/ui/card';
 import { Lightbulb } from 'lucide-react';
+import { useAppStore } from '@/stores/useAppStore';
 
 const DAILY_TIPS = [
   'Break large tasks into smaller, manageable Pomodoros',
@@ -14,6 +15,18 @@ const DAILY_TIPS = [
 
 export default function HomePage() {
   const dailyTip = DAILY_TIPS[new Date().getDay() % DAILY_TIPS.length];
+  const { focusMode } = useAppStore();
+  
+  if (focusMode) {
+    // In focus mode, show only the timer centered
+    return (
+      <div className="flex items-center justify-center min-h-[80vh]">
+        <div className="max-w-2xl w-full">
+          <PomodoroTimer />
+        </div>
+      </div>
+    );
+  }
   
   return (
     <div className="space-y-6">

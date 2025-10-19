@@ -34,7 +34,7 @@ function Router() {
 }
 
 function App() {
-  const { profile, setProfile, theme } = useAppStore();
+  const { profile, setProfile, theme, focusMode } = useAppStore();
   const [levelUpModal, setLevelUpModal] = useState<{ open: boolean; level: number; coins: number }>({
     open: false,
     level: 1,
@@ -68,13 +68,13 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-          <AppHeader />
+          {!focusMode && <AppHeader />}
           
-          <main className="container mx-auto px-4 py-6 pb-24 md:pb-6">
+          <main className={`container mx-auto px-4 py-6 ${focusMode ? 'pt-6' : 'pb-24 md:pb-6'}`}>
             <Router />
           </main>
           
-          <MobileNav />
+          {!focusMode && <MobileNav />}
           
           {/* Panels */}
           <SettingsPanel />

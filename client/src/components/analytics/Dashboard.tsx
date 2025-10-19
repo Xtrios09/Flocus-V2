@@ -144,8 +144,7 @@ export function Dashboard() {
               <PieChart
                 series={[{
                   data: pieData,
-                  highlightScope: { faded: 'global', highlighted: 'item' },
-                  faded: { innerRadius: 30, additionalRadius: -30 },
+                  highlightScope: { fade: 'global', highlight: 'item' },
                 }]}
                 height={250}
                 margin={{ top: 10, bottom: 10, left: 10, right: 10 }}

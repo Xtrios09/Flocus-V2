@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Play, Pause, RotateCcw, Settings } from 'lucide-react';
+import { Play, Pause, RotateCcw, Settings, Eye } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -18,9 +18,24 @@ export function PomodoroTimer() {
     profile,
     updateProfile,
     toggleSettingsPanel,
+    focusMode,
+    toggleFocusMode,
   } = useAppStore();
   
   const intervalRef = useRef<number | null>(null);
+  
+  // Sync timer with settings when they change (only if not running)
+  useEffect(() => {
+    if (!timerState.isRunning && timerState.type === 'work') {
+      const newTotalTime = timerSettings.workDuration * 60;
+      if (timerState.totalTime !== newTotalTime) {
+        setTimerState({
+          timeRemaining: newTotalTime,
+          totalTime: newTotalTime,
+        });
+      }
+    }
+  }, [timerSettings.workDuration, timerState.isRunning, timerState.type]);
   
   // Timer logic
   useEffect(() => {
@@ -140,6 +155,14 @@ export function PomodoroTimer() {
   const handlePresetChange = (workMin: number, breakMin: number) => {
     if (timerState.isRunning) return;
     
+    // Update timer settings first
+    const { updateTimerSettings } = useAppStore.getState();
+    updateTimerSettings({
+      workDuration: workMin,
+      breakDuration: breakMin,
+    });
+    
+    // Then update the current timer state
     const newTotalTime = workMin * 60;
     setTimerState({
       timeRemaining: newTotalTime,
@@ -160,19 +183,34 @@ export function PomodoroTimer() {
     <Card className="p-8 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold">Pomodoro Timer</h2>
+          <h2 className="text-2xl font-bold">Focus Timer</h2>
           <p className="text-sm text-muted-foreground">
             {timerState.type === 'work' ? 'Focus Time' : timerState.type === 'longBreak' ? 'Long Break' : 'Short Break'}
           </p>
         </div>
-        <Button
-          size="icon"
-          variant="ghost"
-          onClick={toggleSettingsPanel}
-          data-testid="button-timer-settings"
-        >
-          <Settings className="w-5 h-5" />
-        </Button>
+        <div className="flex gap-2">
+          {focusMode && (
+            <Button
+              size="icon"
+              variant="ghost"
+              onClick={toggleFocusMode}
+              data-testid="button-exit-focus-mode"
+              title="Exit Focus Mode"
+            >
+              <Eye className="w-5 h-5" />
+            </Button>
+          )}
+          {!focusMode && (
+            <Button
+              size="icon"
+              variant="ghost"
+              onClick={toggleSettingsPanel}
+              data-testid="button-timer-settings"
+            >
+              <Settings className="w-5 h-5" />
+            </Button>
+          )}
+        </div>
       </div>
       
       {/* Circular Progress Timer */}
@@ -227,44 +265,46 @@ export function PomodoroTimer() {
       </div>
       
       {/* Preset Chips */}
-      <div className="flex gap-2 overflow-x-auto pb-2">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => handlePresetChange(25, 5)}
-          disabled={timerState.isRunning}
-          data-testid="button-preset-25-5"
-        >
-          25/5
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => handlePresetChange(50, 10)}
-          disabled={timerState.isRunning}
-          data-testid="button-preset-50-10"
-        >
-          50/10
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => handlePresetChange(15, 3)}
-          disabled={timerState.isRunning}
-          data-testid="button-preset-15-3"
-        >
-          15/3
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => handlePresetChange(45, 15)}
-          disabled={timerState.isRunning}
-          data-testid="button-preset-45-15"
-        >
-          45/15
-        </Button>
-      </div>
+      {!focusMode && (
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handlePresetChange(25, 5)}
+            disabled={timerState.isRunning}
+            data-testid="button-preset-25-5"
+          >
+            25/5
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handlePresetChange(50, 10)}
+            disabled={timerState.isRunning}
+            data-testid="button-preset-50-10"
+          >
+            50/10
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handlePresetChange(15, 3)}
+            disabled={timerState.isRunning}
+            data-testid="button-preset-15-3"
+          >
+            15/3
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handlePresetChange(45, 15)}
+            disabled={timerState.isRunning}
+            data-testid="button-preset-45-15"
+          >
+            45/15
+          </Button>
+        </div>
+      )}
     </Card>
   );
 }

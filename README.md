@@ -4,6 +4,8 @@
 **Flocus V2** is a modern productivity and focus-tracking web app built with **React**, **Vite**, and **TailwindCSS**.  
 It provides a minimal yet gamified way to manage tasks, track focus sessions, and visualize your productivity streaks — all from your browser.
 
+(Demo here: https://flocus-v2.onrender.com/)
+
 ---
 <img width="1420" height="1069" alt="Screenshot From 2025-10-19 13-48-31" src="https://github.com/user-attachments/assets/4ad81067-451b-451b-a646-335b0a0879d6" />
 <img width="1420" height="1069" alt="Screenshot From 2025-10-19 13-50-13" src="https://github.com/user-attachments/assets/bac207fa-3698-4846-bed5-09625e17522a" />

@@ -3,8 +3,13 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { z } from "zod";
 import { updateProfileSchema, insertSessionSchema } from "@shared/schema";
+import { registerMusicRoutes } from "./music/routes";
+import { registerAvatarRoutes } from "./avatars/routes";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  registerMusicRoutes(app);
+  registerAvatarRoutes(app);
+
   // Profile routes
   app.get("/api/profile/:id", async (req, res) => {
     try {

@@ -4,6 +4,8 @@ import { Badge } from '@/components/ui/badge';
 import { Palette, User, Volume2, Check, Lock } from 'lucide-react';
 import { useAppStore } from '@/stores/useAppStore';
 import { useToast } from '@/hooks/use-toast';
+import { useQuery } from '@tanstack/react-query';
+import { avatarApi } from '@/lib/api/musicApi';
 import type { ThemeType } from '@shared/schema';
 
 interface ShopItem {
@@ -16,7 +18,7 @@ interface ShopItem {
   icon: JSX.Element;
 }
 
-const SHOP_ITEMS: ShopItem[] = [
+const STATIC_SHOP_ITEMS: ShopItem[] = [
   {
     id: 'theme_cyberpunk',
     type: 'theme',
@@ -45,24 +47,6 @@ const SHOP_ITEMS: ShopItem[] = [
     icon: <Palette className="w-6 h-6" />,
   },
   {
-    id: 'avatar_2',
-    type: 'avatar',
-    name: 'Avatar Pack 2',
-    description: 'Unlock 5 new avatar options',
-    price: 300,
-    itemKey: 'avatar2',
-    icon: <User className="w-6 h-6" />,
-  },
-  {
-    id: 'avatar_3',
-    type: 'avatar',
-    name: 'Avatar Pack 3',
-    description: 'Premium avatar collection',
-    price: 300,
-    itemKey: 'avatar3',
-    icon: <User className="w-6 h-6" />,
-  },
-  {
     id: 'sound_nature',
     type: 'sound',
     name: 'Nature Sounds',
@@ -85,6 +69,24 @@ const SHOP_ITEMS: ShopItem[] = [
 export function RewardsShop() {
   const { profile, updateProfile } = useAppStore();
   const { toast } = useToast();
+  
+  const { data: avatarPacks, isLoading: avatarPacksLoading } = useQuery({
+    queryKey: ['avatar-packs'],
+    queryFn: () => avatarApi.getAvatarPacks(),
+  });
+  
+  const allShopItems: ShopItem[] = [
+    ...STATIC_SHOP_ITEMS,
+    ...(avatarPacks?.map((pack: any) => ({
+      id: pack.id,
+      type: 'avatar' as const,
+      name: pack.name,
+      description: pack.description,
+      price: pack.price,
+      itemKey: pack.id,
+      icon: <User className="w-6 h-6" />,
+    })) || []),
+  ];
   
   const isPurchased = (item: ShopItem): boolean => {
     if (!profile) return false;
@@ -132,8 +134,14 @@ export function RewardsShop() {
           <p className="text-muted-foreground">Spend your coins on themes, avatars, and sounds</p>
         </div>
         
+        {avatarPacksLoading && (
+          <div className="text-center py-4 text-muted-foreground">
+            <p className="text-sm">Loading avatar packs...</p>
+          </div>
+        )}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {SHOP_ITEMS.map((item) => {
+          {allShopItems.map((item) => {
             const purchased = isPurchased(item);
             const affordable = canAfford(item.price);
             

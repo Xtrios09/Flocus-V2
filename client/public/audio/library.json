@@ -1,0 +1,154 @@
+{
+  "nature": [
+    {
+      "id": "nature-1",
+      "title": "Ocean Waves",
+      "artist": "Nature Sounds",
+      "duration": 180,
+      "category": "nature",
+      "type": "ambient",
+      "url": "https://cdn.pixabay.com/audio/2022/03/10/audio_c8b3f4be07.mp3",
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    },
+    {
+      "id": "nature-2",
+      "title": "Forest Ambience",
+      "artist": "Nature Sounds",
+      "duration": 200,
+      "category": "nature",
+      "type": "ambient",
+      "url": "https://cdn.pixabay.com/audio/2022/03/24/audio_9c0823dc5c.mp3",
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    },
+    {
+      "id": "nature-3",
+      "title": "Rain Sound",
+      "artist": "Nature Sounds",
+      "duration": 155,
+      "category": "nature",
+      "type": "ambient",
+      "url": "https://cdn.pixabay.com/audio/2022/05/13/audio_c1e5e5c3ff.mp3",
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    },
+    {
+      "id": "nature-4",
+      "title": "Birds Chirping",
+      "artist": "Nature Sounds",
+      "duration": 120,
+      "category": "nature",
+      "type": "ambient",
+      "url": "https://cdn.pixabay.com/audio/2022/03/10/audio_5c1f2c4e3b.mp3",
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    },
+    {
+      "id": "nature-5",
+      "title": "Waterfall Flow",
+      "artist": "Nature Sounds",
+      "duration": 165,
+      "category": "nature",
+      "type": "ambient",
+      "url": "https://cdn.pixabay.com/audio/2024/02/21/audio_f9c2e26fa3.mp3",
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    }
+  ],
+  "lofi": [
+    {
+      "id": "lofi-1",
+      "title": "Lofi Study",
+      "artist": "Coma-Media",
+      "duration": 139,
+      "category": "lofi",
+      "type": "music",
+      "url": "https://cdn.pixabay.com/audio/2023/12/25/audio_c20c228d9e.mp3",
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    },
+    {
+      "id": "lofi-2",
+      "title": "Chill Lofi Beat",
+      "artist": "FASSounds",
+      "duration": 156,
+      "category": "lofi",
+      "type": "music",
+      "url": "https://cdn.pixabay.com/audio/2024/09/17/audio_75b50a4a28.mp3",
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    },
+    {
+      "id": "lofi-3",
+      "title": "Lofi Vibes",
+      "artist": "Mood Mode",
+      "duration": 143,
+      "category": "lofi",
+      "type": "music",
+      "url": "https://cdn.pixabay.com/audio/2024/07/30/audio_c8dbf992c3.mp3",
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    },
+    {
+      "id": "lofi-4",
+      "title": "Relaxing Lofi",
+      "artist": "Lesfm",
+      "duration": 132,
+      "category": "lofi",
+      "type": "music",
+      "url": "https://cdn.pixabay.com/audio/2023/10/06/audio_6c95464258.mp3",
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    },
+    {
+      "id": "lofi-5",
+      "title": "Calm Lofi Hip Hop",
+      "artist": "Lofium",
+      "duration": 148,
+      "category": "lofi",
+      "type": "music",
+      "url": "https://cdn.pixabay.com/audio/2024/02/27/audio_dc6c664b3c.mp3",
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    },
+    {
+      "id": "lofi-6",
+      "title": "Coffee Shop Lofi",
+      "artist": "Alexiaction",
+      "duration": 125,
+      "category": "lofi",
+      "type": "music",
+      "url": "https://cdn.pixabay.com/audio/2023/11/11/audio_ded1c26bfc.mp3",
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    },
+    {
+      "id": "lofi-7",
+      "title": "Late Night Lofi",
+      "artist": "Music Unlimited",
+      "duration": 167,
+      "category": "lofi",
+      "type": "music",
+      "url": "https://cdn.pixabay.com/audio/2024/05/09/audio_fb905a7b77.mp3",
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    },
+    {
+      "id": "lofi-8",
+      "title": "Dreamy Lofi",
+      "artist": "Serge Quadrado",
+      "duration": 154,
+      "category": "lofi",
+      "type": "music",
+      "url": "https://cdn.pixabay.com/audio/2024/01/15/audio_8a3faa9e62.mp3",
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    }
+  ],
+  "playlists": [
+    {
+      "id": "nature-pack",
+      "name": "Nature Sounds Collection",
+      "description": "Relaxing nature ambience for focus",
+      "category": "nature",
+      "tracks": ["nature-1", "nature-2", "nature-3", "nature-4", "nature-5"],
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    },
+    {
+      "id": "lofi-pack",
+      "name": "Lofi Study Beats",
+      "description": "Chill lofi hip-hop for productivity",
+      "category": "lofi",
+      "tracks": ["lofi-1", "lofi-2", "lofi-3", "lofi-4", "lofi-5", "lofi-6", "lofi-7", "lofi-8"],
+      "thumbnail": "https://cdn.pixabay.com/audio/2024/08/09/14-29-23-177_200x200.jpg"
+    }
+  ]
+}

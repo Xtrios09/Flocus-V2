@@ -107,36 +107,6 @@ The frontend (`/client`) is built with **Vite** and **React**. It fetches mock A
 
    By default, the frontend runs on [http://localhost:5000](http://localhost:5000).
 
----
-
-## 🌐 Deployment
-
-### 🟩 Option 1: Frontend Only (Recommended for Vercel)
-
-If you only want to host the UI:
-
-1. Ensure `vite.config.ts` has:
-
-   ```ts
-   root: "./client",
-   build: { outDir: "./dist", emptyOutDir: true }
-   ```
-2. Deploy on [Vercel](https://vercel.com):
-
-   * **Root Directory:** `.`
-   * **Framework Preset:** Vite
-   * **Build Command:** `npm run build`
-   * **Output Directory:** `dist`
-
-### 🟨 Option 2: Full Stack
-
-If you want the backend running too:
-
-* Use [Render](https://render.com), [Railway](https://railway.app), or [Fly.io](https://fly.io)
-* These platforms support persistent Node.js servers.
-
----
-
 ## ⚙️ Environment Variables
 
 | Variable       | Description                 | Example                        |

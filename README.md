@@ -13,6 +13,21 @@ It provides a minimal yet gamified way to manage tasks, track focus sessions, an
 <img width="1420" height="1069" alt="Screenshot From 2025-10-19 13-53-54" src="https://github.com/user-attachments/assets/a49e8a09-1be4-4d9a-a282-1738875d3d35" />
 <img width="1420" height="1069" alt="Screenshot From 2025-10-19 13-53-57" src="https://github.com/user-attachments/assets/a9b1131f-9c08-450e-8a5e-04a7af78c313" />
 
+<img width="1420" height="1069" alt="Screenshot From 2025-10-19 14-10-10" src="https://github.com/user-attachments/assets/fea067ee-7932-4065-a161-159ea9336805" />
+<img width="1420" height="1069" alt="Screenshot From 2025-10-19 14-10-21" src="https://github.com/user-attachments/assets/febdefa3-b2ba-483b-b8bf-c29184cd6499" />
+<img width="1420" height="1069" alt="Screenshot From 2025-10-19 14-10-25" src="https://github.com/user-attachments/assets/410b65ae-a4b2-4923-b518-b67f9d49b180" />
+<img width="1420" height="1069" alt="Screenshot From 2025-10-19 14-10-31" src="https://github.com/user-attachments/assets/9595bb6a-219e-41eb-93f7-2665d567708e" />
+<img width="1420" height="1069" alt="Screenshot From 2025-10-19 14-10-34" src="https://github.com/user-attachments/assets/bec2c0be-4b35-47d7-b1e6-2923dc1ce858" />
+
+<img width="1420" height="1069" alt="Screenshot From 2025-10-19 14-16-51" src="https://github.com/user-attachments/assets/4de9c5f0-228d-47cc-a086-152c2f134ae8" />
+<img width="1420" height="1069" alt="Screenshot From 2025-10-19 14-16-54" src="https://github.com/user-attachments/assets/2c5bceca-ab86-49c6-9940-37fd0d596e23" />
+<img width="1420" height="1069" alt="Screenshot From 2025-10-19 14-16-59" src="https://github.com/user-attachments/assets/f18622af-3f72-4b6c-b705-d0a135327b39" />
+<img width="1420" height="1069" alt="Screenshot From 2025-10-19 14-17-09" src="https://github.com/user-attachments/assets/cbe187aa-d4e8-4585-9636-a5b2f1db226b" />
+<img width="1420" height="1069" alt="Screenshot From 2025-10-19 14-17-12" src="https://github.com/user-attachments/assets/1d0f6bfe-4274-4211-96f2-a087b95a1188" />
+<img width="1670" height="1075" alt="Screenshot From 2025-10-19 14-17-32" src="https://github.com/user-attachments/assets/b45e234c-dd4a-4ffc-b14c-749596af753c" />
+<img width="1670" height="1075" alt="Screenshot From 2025-10-19 14-17-36" src="https://github.com/user-attachments/assets/088fb745-f3da-4e81-bd69-d1d63b28cb2c" />
+
+
 ## 🚀 Features
 
 - 🕒 **Focus Sessions:** Start and complete "work" or "break" sessions with XP and coin rewards.  

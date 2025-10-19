@@ -142,10 +142,3 @@ This project is licensed under the [MIT License](./LICENSE).
 Developed by [Abhijeet Prabhakar](https://github.com/Xtrios09).
 Built with creativity, caffeine, and focus ☕✨
 
-```
-
----
-
-Would you like me to tailor this `README.md` for **a Vercel-only deployment** (i.e., remove backend mentions and describe it as a fully client-side app)?  
-That would make it even cleaner for portfolio/demo use.
-```

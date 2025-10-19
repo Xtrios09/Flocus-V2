@@ -1,0 +1,92 @@
+"use strict";
+'use client';
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault").default;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.useChartContainerProps = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+var _allPlugins = require("../internals/plugins/allPlugins");
+const _excluded = ["width", "height", "margin", "children", "series", "colors", "dataset", "desc", "onAxisClick", "highlightedAxis", "onHighlightedAxisChange", "disableVoronoi", "voronoiMaxRadius", "onItemClick", "disableAxisListener", "highlightedItem", "onHighlightChange", "sx", "title", "xAxis", "yAxis", "zAxis", "rotationAxis", "radiusAxis", "skipAnimation", "seriesConfig", "plugins", "localeText", "slots", "slotProps", "experimentalFeatures", "enableKeyboardNavigation"];
+const useChartContainerProps = (props, ref) => {
+  const _ref = props,
+    {
+      width,
+      height,
+      margin,
+      children,
+      series,
+      colors,
+      dataset,
+      desc,
+      onAxisClick,
+      highlightedAxis,
+      onHighlightedAxisChange,
+      disableVoronoi,
+      voronoiMaxRadius,
+      onItemClick,
+      disableAxisListener,
+      highlightedItem,
+      onHighlightChange,
+      sx,
+      title,
+      xAxis,
+      yAxis,
+      zAxis,
+      rotationAxis,
+      radiusAxis,
+      skipAnimation,
+      seriesConfig,
+      plugins,
+      localeText,
+      slots,
+      slotProps,
+      experimentalFeatures,
+      enableKeyboardNavigation
+    } = _ref,
+    other = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded);
+  const chartsSurfaceProps = (0, _extends2.default)({
+    title,
+    desc,
+    sx,
+    ref
+  }, other);
+  const chartDataProviderProps = {
+    margin,
+    series,
+    colors,
+    dataset,
+    disableAxisListener,
+    highlightedItem,
+    onHighlightChange,
+    onAxisClick,
+    highlightedAxis,
+    onHighlightedAxisChange,
+    disableVoronoi,
+    voronoiMaxRadius,
+    onItemClick,
+    xAxis,
+    yAxis,
+    zAxis,
+    rotationAxis,
+    radiusAxis,
+    skipAnimation,
+    width,
+    height,
+    localeText,
+    seriesConfig,
+    experimentalFeatures,
+    enableKeyboardNavigation,
+    plugins: plugins ?? _allPlugins.DEFAULT_PLUGINS,
+    slots,
+    slotProps
+  };
+  return {
+    chartDataProviderProps,
+    chartsSurfaceProps,
+    children
+  };
+};
+exports.useChartContainerProps = useChartContainerProps;

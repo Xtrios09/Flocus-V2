@@ -1,0 +1,17 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MockBadOverrideGesture = void 0;
+var _core = require("../../core");
+class MockBadOverrideGesture extends _core.Gesture {
+  state = {};
+  resetState() {}
+  clone() {
+    return new MockBadOverrideGesture({
+      name: this.name
+    });
+  }
+}
+exports.MockBadOverrideGesture = MockBadOverrideGesture;
